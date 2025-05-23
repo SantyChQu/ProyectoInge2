@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Cliente
-from .forms import ClienteForm
+from .forms import ClienteUpdateForm
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
@@ -14,12 +14,12 @@ def ver_clientes(request):
 
 def registrar_cliente(request):
     if request.method == 'POST':
-        form = ClienteForm(request.POST)
+        form = ClienteUpdateForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('tasks')  # Reemplazá por el nombre de tu URL
     else:
-        form = ClienteForm()
+        form = ClienteUpdateForm()
     
     return render(request, 'signup.html', {'form': form})
 
