@@ -17,7 +17,7 @@ def registrar_cliente(request):
         form = ClienteUpdateForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('tasks')  # Reemplazá por el nombre de tu URL
+            return redirect('tasks')  
     else:
         form = ClienteUpdateForm()
     
