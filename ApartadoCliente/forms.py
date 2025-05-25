@@ -12,7 +12,11 @@ class ClienteUpdateForms(forms.ModelForm):
     )
     apellido= forms.CharField(required=True,validators=[solo_letras],
         error_messages={'invalid': 'Solo se permiten letras.'})
+<<<<<<< HEAD
     edad= forms.IntegerField(required=True)
+=======
+    edad= forms.IntegerField(required=True, min_value=18)
+>>>>>>> 88ad243 (registro login modificacion detalle)
     telefono= forms.IntegerField(required=True)
     contraseña = forms.CharField(required=False,
         widget=forms.PasswordInput,

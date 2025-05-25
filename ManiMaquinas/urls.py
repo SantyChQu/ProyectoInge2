@@ -17,8 +17,22 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
+<<<<<<< HEAD
 from  General import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', views.inicio),
+=======
+from General import views as general
+from ApartadoCliente import views as cliente_views
+
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path('', general.inicio),
+    path('ingreso/', general.ingresar, name='ingreso'),
+    path('cerrarSesion/', general.cerrarSesion),
+     path('registro/', general.registro),
+     path('verMisDatos/',general.VerDatos),
+     path('cambiar_contraseña/', general.cambiar_contraseña, name='cambiar_contraseña')
+>>>>>>> 88ad243 (registro login modificacion detalle)
     ]
